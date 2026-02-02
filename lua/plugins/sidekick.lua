@@ -1,0 +1,109 @@
+return {
+  {
+    "folke/sidekick.nvim",
+    opts = {
+      nes = {
+        enabled = false,
+      },
+      cli = {
+        watch = true,
+        mux = {
+          enabled = true,
+          backend = "tmux",
+          create = "terminal",
+        },
+        win = {
+          layout = "right",
+          keys = {
+            hide_ctrl_backslash = { "<c-\\>", "hide", mode = "nt", desc = "hide the terminal window" },
+          },
+        },
+      },
+    },
+    keys = {
+      {
+        "<leader>aa",
+        function()
+          require("sidekick.cli").toggle()
+        end,
+        desc = "Sidekick Toggle CLI",
+      },
+      {
+        "<c-\\>",
+        function()
+          require("sidekick.cli").toggle()
+        end,
+        mode = { "n", "t" },
+        desc = "Sidekick Toggle CLI",
+      },
+      {
+        "<leader>ac",
+        function()
+          require("sidekick.cli").toggle({ name = "claude", focus = true })
+        end,
+        desc = "Sidekick Toggle Claude",
+      },
+      {
+        "<leader>ao",
+        function()
+          require("sidekick.cli").toggle({ name = "opencode", focus = true })
+        end,
+        desc = "Sidekick Toggle OpenCode",
+      },
+      {
+        "<leader>as",
+        function()
+          require("sidekick.cli").select({ filter = { installed = true } })
+        end,
+        desc = "Sidekick Select CLI",
+      },
+      {
+        "<leader>ap",
+        function()
+          require("sidekick.cli").prompt()
+        end,
+        mode = { "n", "x" },
+        desc = "Sidekick Select Prompt",
+      },
+      {
+        "<leader>at",
+        function()
+          require("sidekick.cli").send({ msg = "{this}" })
+        end,
+        mode = { "n", "x" },
+        desc = "Sidekick Send This",
+      },
+      {
+        "<leader>af",
+        function()
+          require("sidekick.cli").send({ msg = "{file}" })
+        end,
+        desc = "Sidekick Send File",
+      },
+      {
+        "<leader>av",
+        function()
+          require("sidekick.cli").send({ msg = "{selection}" })
+        end,
+        mode = { "x" },
+        desc = "Sidekick Send Selection",
+      },
+    },
+  },
+  -- Prevent Copilot auth prompts while keeping Sidekick CLI working.
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        copilot = {},
+      },
+      setup = {
+        copilot = function()
+          return true
+        end,
+      },
+    },
+  },
+  { "zbirenbaum/copilot.lua", enabled = false },
+  { "github/copilot.vim", enabled = false },
+}
