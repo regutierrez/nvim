@@ -1,1 +1,0 @@
-/Users/pael/Documents/notes/2-main/dev/lazyvim-cheatsheet.md
