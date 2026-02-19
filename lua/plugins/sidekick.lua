@@ -14,6 +14,9 @@ return {
         },
         win = {
           layout = "right",
+          split = {
+            width = 0.35,
+          },
           keys = {
             hide_ctrl_backslash = { "<c-\\>", "hide", mode = "nt", desc = "hide the terminal window" },
           },
