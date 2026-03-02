@@ -21,6 +21,13 @@ return {
             hide_ctrl_backslash = { "<c-\\>", "hide", mode = "nt", desc = "hide the terminal window" },
           },
         },
+        tools = {
+          pi = {
+            cmd = { "pi" },
+            is_proc = "\\<pi\\>",
+            url = "https://github.com/mariozechner/pi-coding-agent",
+          },
+        },
       },
     },
     keys = {
@@ -52,6 +59,13 @@ return {
           require("sidekick.cli").toggle({ name = "opencode", focus = true })
         end,
         desc = "Sidekick Toggle OpenCode",
+      },
+      {
+        "<leader>ai",
+        function()
+          require("sidekick.cli").toggle({ name = "pi", focus = true })
+        end,
+        desc = "Sidekick Toggle Pi",
       },
       {
         "<leader>as",
