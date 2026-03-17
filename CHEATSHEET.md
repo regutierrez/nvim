@@ -36,6 +36,22 @@ Note: this is exhaustive. Consider trimming this into a "daily keys" version onc
 | `<C-k>` | n | Go to upper window |
 | `<C-l>` | n | Go to right window |
 
+### Folding
+
+| Key | Mode | Description |
+|-----|------|-------------|
+| `zc` | n | Close fold under cursor |
+| `zo` | n | Open fold under cursor |
+| `za` | n | Toggle fold under cursor |
+| `zC` | n | Close fold recursively |
+| `zO` | n | Open fold recursively |
+| `zM` | n | Close all folds |
+| `zR` | n | Open all folds |
+| `zm` | n | Fold more |
+| `zr` | n | Fold less |
+| `zj` | n | Jump to next fold |
+| `zk` | n | Jump to previous fold |
+
 ### Window Management
 
 | Key | Mode | Description |
@@ -324,7 +340,6 @@ Note: this is exhaustive. Consider trimming this into a "daily keys" version onc
 |-------------|------|-------------|---------|
 | `ma` | n | Set local mark `a` at cursor | `ma` |
 | `mA` | n | Set global mark `A` (file mark) | `mA` |
-
 | `'a` | n | Jump to mark `a` line | `'a` |
 | `` `a `` | n | Jump to exact mark `a` position | `` `a `` |
 | `:marks` | c | List marks | `:marks` |
