@@ -27,6 +27,10 @@ return {
             is_proc = "\\<pi\\>",
             url = "https://github.com/mariozechner/pi-coding-agent",
           },
+          amp = {
+            cmd = { "amp" },
+            is_proc = "\\<amp\\>",
+          },
         },
       },
     },
@@ -45,27 +49,6 @@ return {
         end,
         mode = { "n", "t" },
         desc = "Sidekick Toggle CLI",
-      },
-      {
-        "<leader>ac",
-        function()
-          require("sidekick.cli").toggle({ name = "claude", focus = true })
-        end,
-        desc = "Sidekick Toggle Claude",
-      },
-      {
-        "<leader>ao",
-        function()
-          require("sidekick.cli").toggle({ name = "opencode", focus = true })
-        end,
-        desc = "Sidekick Toggle OpenCode",
-      },
-      {
-        "<leader>ai",
-        function()
-          require("sidekick.cli").toggle({ name = "pi", focus = true })
-        end,
-        desc = "Sidekick Toggle Pi",
       },
       {
         "<leader>as",
