@@ -81,6 +81,27 @@ return {
         desc = "Sidekick Send File",
       },
       {
+        "<leader>ax",
+        function()
+          require("sidekick.cli").detach()
+        end,
+        desc = "Sidekick Detach Session",
+      },
+      {
+        "<leader>ad",
+        function()
+          require("sidekick.cli").send({ prompt = "diagnostics" })
+        end,
+        desc = "Sidekick Send Diagnostics (current file)",
+      },
+      {
+        "<leader>aD",
+        function()
+          require("sidekick.cli").send({ prompt = "diagnostics_all" })
+        end,
+        desc = "Sidekick Send Diagnostics (all)",
+      },
+      {
         "<leader>av",
         function()
           require("sidekick.cli").send({ msg = "{selection}" })
