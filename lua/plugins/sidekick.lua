@@ -83,7 +83,7 @@ return {
       {
         "<leader>ax",
         function()
-          require("sidekick.cli").detach()
+          require("sidekick.cli").close()
         end,
         desc = "Sidekick Detach Session",
       },
