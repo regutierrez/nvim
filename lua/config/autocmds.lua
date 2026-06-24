@@ -18,6 +18,15 @@ vim.api.nvim_create_autocmd("User", {
   end,
 })
 
+local jsonl_group = vim.api.nvim_create_augroup("jsonl_highlighting", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  group = jsonl_group,
+  pattern = "jsonl",
+  callback = function(args)
+    vim.bo[args.buf].syntax = "json"
+  end,
+})
+
 local gopls_diag_group = vim.api.nvim_create_augroup("gopls_diagnostic_hygiene", { clear = true })
 
 local function gopls_keep_namespaces(bufnr)
